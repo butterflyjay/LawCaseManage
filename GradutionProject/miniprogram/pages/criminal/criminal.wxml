@@ -1,0 +1,46 @@
+<view class="top">
+	<view class="center">
+	  <view class="center_top">
+			<view class="center_img">
+				<image src="{{criminal.icon}}" type="userAvatarUrl" class="user_head"></image>
+			</view>
+			<view class="center_info">
+				<view class="center_phone">罪犯基本信息</view>
+				<view class="center_username">姓名: {{criminal.name}}</view>
+      </view>  
+    </view>
+	</view>
+</view>
+<view class="main">
+		<view class="main_info">罪犯id:</view>
+		<view class="infor">{{criminal.criminal_id}}</view>
+</view>
+<navigator class="main" url="/pages/case/case?lawcase_name={{criminal.lawcase_name}}">
+	<view class="main_info">犯罪案件:</view>
+  <view class="infor" style="width:100px;">{{criminal.lawcase_name}}</view>
+  <image class="img" src="../images/right.png"></image>
+</navigator>
+<view class="main">
+	<view class="main_info">证件类型:</view>
+	<view class="infor">{{criminal.IDtype}}</view>
+</view>
+<view class="main">
+	<view class="main_info">证件编号:</view>
+	<view class="infor">{{criminal.IDcard}}</view>
+</view>
+<view class="main">
+	<view class="main_info">曾经工作部门:</view>
+	<view class="infor">{{criminal.area}}</view>
+</view>
+<view class="main">
+		<view class="main_info">年龄:</view>
+		<view class="infor">{{criminal.age}}</view>
+</view>
+<view class="main">
+		<view class="main_info">性别:</view>
+		<view class="infor">{{criminal.sex}}</view>
+</view>
+<view class="punish">
+		<view class="main_info">判罚:</view>
+		<view class="infor">{{criminal.punish}}</view>
+</view>

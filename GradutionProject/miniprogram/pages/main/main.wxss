@@ -1,0 +1,77 @@
+/* pages/main/main.wxss */
+page {  
+  min-height: 100%;  
+  /* background-color:  #23EBB9; */
+}
+.top,.bottom{
+  background-color:  #23EBB9;
+}
+.gif-wave {
+  display: block;
+  width: 100%;
+  height: 30px;
+  mix-blend-mode: screen; /* 元素与父元素背景颜色融合 */
+  z-index: -1;
+}
+.container {
+  width: 100%;
+}
+.casetext {
+  height: 25px;
+  padding-top: 5px;
+  width: 100%;
+  background-color: whitesmoke;
+  padding-left: 20px;
+  font-size: 14px;
+  color: rgb(136, 133, 133);
+}
+.center-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 140px;
+  background-color: white;
+}
+.function {
+  text-align: center;
+  display: flex;
+  height: 125px;
+  width: 110px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.function1 {
+  text-align: center;
+  display: flex;
+  height: 125px;
+  width: 50%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 70px;
+  width: 80%;
+  padding-bottom: 10px;
+}
+.center-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 140px;
+  background-color: white;
+}
+.center-bottom view {
+  height: 125px;
+  width: 110px;
+  border: solid rgb(230, 225, 225) 1rpx;
+  background-color: white;
+  border-radius: 25rpx;
+}

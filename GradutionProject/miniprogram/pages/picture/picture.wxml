@@ -1,0 +1,14 @@
+<!--pages/picture/picture.wxml-->
+<view class='parentLayout'>
+  <swiper class="tab-content" current='{{currentTab}}' duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+   <swiper-item class="tab-item" wx:for="{{img_Url}}" wx:key="pic" wx:index="index">
+   <view class='view_flex'>
+     <image class='image' mode='widthFix' src='{{img_Url[index]}}'/>
+    </view>
+   </swiper-item>
+  </swiper>
+  <view class='view_bottom'>
+      <view class='btn_back' bindtap='bindBackTap'>返回</view>
+      <view class='btn_del' bindtap='bindDelTap'>删除</view>
+    </view>
+</view>

@@ -1,0 +1,188 @@
+/* pages/person/person.wxss */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  margin: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-top: solid 0.5px rgb(233, 230, 230);
+  border-left: solid 1.5px rgb(233, 230, 230);
+  border-right: solid 2.5px rgb(233, 230, 230);
+  border-bottom: solid 3.5px rgb(233, 230, 230);
+  border-radius: 10px;
+}
+.top {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.time {
+  margin-left: auto;
+}
+.title {
+  padding-left: 15px;
+  width: 96%;
+  border-top: solid 0.2px  rgb(233, 230, 230);
+  border-bottom: solid 2px  rgb(233, 230, 230);
+  line-height: 45px;
+  height: 45px;
+  font-size: 18px;
+}
+.status {
+  color: white;
+  font-size: 15px;
+  width: 70px;
+  text-align: center;
+  height: fit-content;
+}
+.time {
+  color: darkgrey;
+  font-size: 13px;
+}
+.people {
+  padding-left: 15px;
+  width: 96%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* 这是一个分界线 */
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;}
+.swiper-tab-list{  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #777777;
+}
+.on{ color: #48D1CC;
+  border-bottom: 3rpx solid #48D1CC;}
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }
+.infor {
+  width: 100%;
+  height: 180px;
+  background: white;
+  padding-top: 15px;
+  position: relative;
+}
+.center {
+  width: 95%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.center_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  border-bottom: 1px solid white;
+}
+.center_img {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: solid 0.5px gray;
+}
+.center_img .user_head {
+  width: 100%;
+  height: 100%;
+}
+.click {
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  width: fit-content;
+  margin-left: auto;
+}
+.center_main {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+.addinfor {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 90%;
+  color: gray;
+  display: flex;
+  flex-direction: row;
+}
+.add {
+  width: 80%;
+  border: solid 1px gray;
+  border-radius: 5px;
+  text-align: center;
+}
+.list1 {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  align-items: center;
+  margin: 10px;
+  background-color: #48D1CC;
+}
+.list2 {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  align-items: center;
+  margin: 10px;
+  background-color: #708090;
+}
+.del_infor {
+  display: flex;
+  font-size: 13px;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  width: 200px;
+  margin-left: 10px;
+  color: white;
+}
+.right1 {
+  font-size: 12px;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  border: solid 1px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.right2 {
+  font-size: 12px;
+  background-color: green;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  border: solid 1px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.tell {
+  margin-top: 20px;
+  font-size: 12px;
+  float: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

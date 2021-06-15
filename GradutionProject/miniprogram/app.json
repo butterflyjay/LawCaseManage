@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/main/main",
+    "pages/me/me",
+    "pages/changeuser/changeuser",
+    "pages/manger-add/manger-add",
+    "pages/manger-browse/manger-browse",
+    "pages/manger-browse1/manger-browse1",
+    "pages/moreinfo/morinfo",
+    "pages/moreinfo1/morinfo1",
+    "pages/casecheck/casecheck",
+    "pages/casecheck1/casecheck1",
+    "pages/person/person",
+    "pages/record/record",
+    "pages/casecheckmore/casecheckmore",
+    "pages/casecheckmore1/casecheckmore1",
+    "pages/picture/picture",
+    "pages/visual/visual",
+    "pages/criminal/criminal",
+    "pages/case/case",
+    "pages/picture1/picture1"
+  ],
+  "requiredBackgroundModes": ["audio", "location"],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "案件管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#A9A9A9",
+    "selectedColor": "#23EBB9",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "主页",
+        "iconPath": "./pages/images/homepage2.png",
+        "selectedIconPath": "./pages/images/homepage1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人中心",
+        "iconPath": "./pages/images/me1.png",
+        "selectedIconPath": "./pages/images/me2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

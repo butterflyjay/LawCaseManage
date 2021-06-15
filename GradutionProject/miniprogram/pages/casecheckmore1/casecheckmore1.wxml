@@ -1,0 +1,15 @@
+<!--pages/casecheckmore/casecheckmore.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="top">案件详细信息</view>
+    <view class="title">{{casecheck.name}}</view>
+    <view class="people">案件编号：{{casecheck.num}}</view>
+    <view class="people">案件罪犯：{{casecheck.criminal}}</view>
+    <view class="people">案件类型：{{casecheck.type}}</view>
+    <view class="people">案件部门：{{casecheck.area}}</view>
+    <view class="people">案件时间：{{casecheck.time}}</view>
+    <view class="people">案件描述：</view>
+    <view class="content">{{casecheck.content}}</view>
+    <view class="people" style="color:blue;">提交人：{{casecheck.user_name}}</view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+<!--pages/case/case.wxml-->
+<view class="table">
+  <view class="main-info">
+    <view class="changecase">
+      <label>案件编号<text style="color:red;">*</text></label>
+      <view class="change" style="color:red;">{{showdata.num}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件名称<text style="color:red;">*</text></label>
+      <view class="change" style="color:red;">{{showdata.name}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件罪犯<text>*</text></label>
+      <view class="change">{{showdata.criminal}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件类型<text>*</text></label>
+      <view class="change">{{showdata.type}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件部门<text>*</text></label>
+      <view class="change">{{showdata.area}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件时间<text>*</text></label>
+      <view class="change">{{showdata.time}}</view>
+    </view>
+    <view class="des">
+      <view class="tr">详细描述</view>
+      <view class="describe">{{showdata.content}}</view>
+    </view>
+    <view class="tr">案件相关图片</view>
+    <button class="showimg" wx:if="{{showdata.imgUrl}}" bindtap="lookpic">查看图片</button>
+    <view class="notshow" wx:else>--该案件没有相关图片--</view>
+    <view class="tr">案件相关录音</view>
+    <audio id="myAudio" class="showvoice" author="--" name="案件录音" wx:if="{{showdata.voiceUrl}}" src="{{showdata.voiceUrl}}" controls="true"></audio>
+    <view class="notshow" wx:else>--该案件没有录音--</view>
+    <view class="tr">案件相关视频</view>
+    <video class="showvideo" wx:if="{{showdata.videoUrl}}" src="{{showdata.videoUrl}}"></video>
+    <view class="notshow" wx:else>--该案件无相关视频--</view>
+  </view>
+</view>

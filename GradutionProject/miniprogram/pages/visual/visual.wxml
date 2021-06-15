@@ -1,0 +1,7 @@
+<view class="container">
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:250px" bindtouchstart="touchHandler"></canvas>
+    <view class="title">犯罪类型显示图</view>
+    <view class="line"></view>
+    <canvas canvas-id="radarCanvas" class="canvas" style="margin-top:20px;height:250px" bindtouchstart="touchHandler"></canvas>
+    <view class="title">部门犯罪案件数显示图</view>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/manger-browse/manger-browse.wxml-->
+<view class="container">
+  <view class="inp">
+      <image class="search" src="../images/search.png"></image>
+      <input class="inpFind" placeholder="搜索" bindinput="Searchvalue"/>  
+  </view>
+  <view class="main">
+    <van-dropdown-menu>
+      <van-dropdown-item  value="{{ value1 }}" options="{{ option1 }}" bind:change="mySelecttype"/>
+      <van-dropdown-item  value="{{ value2 }}" options="{{ option2 }}" bind:change="mySelectarea"/>
+    </van-dropdown-menu>
+    <view class="ofmain">
+      <block wx:for="{{showdata}}" wx:key="index">
+        <view class="table" wx:if="{{Searchinfor==item.num || Searchinfor==item.name}}">
+          <view class="main-info">
+            <view class="tr">案件编号：{{item.num}}</view>
+            <view class="tr">案件名称：{{item.name}}</view>
+            <view class="tr">案件罪犯：{{item.criminal}}</view>
+            <view class="tr">案件类型：<text class="type">{{item.type}}</text></view>
+            <view class="tr">案件部门：{{item.area}}</view>
+            <view class="tr">发布时间：{{item.time}}</view>
+          </view>
+          <navigator class="all-info" url="../moreinfo1/morinfo1?type={{item.type}}&area={{item.area}}&time={{item.time}}&num={{item.num}}&content={{item.content}}&imgUrl={{item.imgUrl}}&voiceUrl={{item.voiceUrl}}&videoUrl={{item.videoUrl}}&name={{item.name}}&criminal={{item.criminal}}">查看详情</navigator>
+        </view>
+
+      <view wx:elif="{{Searchinfor == ''}}">
+        <view class="table" wx:if="{{Type=='all' && Area=='all'}}">
+          <view class="main-info">
+            <view class="tr">案件编号：{{item.num}}</view>
+            <view class="tr">案件名称：{{item.name}}</view>
+            <view class="tr">案件罪犯：{{item.criminal}}</view>
+            <view class="tr">案件类型：<text class="type">{{item.type}}</text></view>
+            <view class="tr">案件部门：{{item.area}}</view>
+            <view class="tr">发布时间：{{item.time}}</view>
+          </view>
+          <navigator class="all-info" url="../moreinfo1/morinfo1?type={{item.type}}&area={{item.area}}&time={{item.time}}&num={{item.num}}&content={{item.content}}&imgUrl={{item.imgUrl}}&voiceUrl={{item.voiceUrl}}&videoUrl={{item.videoUrl}}&name={{item.name}}&criminal={{item.criminal}}">查看详情</navigator>
+        </view>
+         
+        <view class="table" wx:elif="{{Type==item.type && Area==item.area}}">
+          <view class="main-info">
+            <view class="tr">案件编号：{{item.num}}</view>
+            <view class="tr">案件名称：{{item.name}}</view>
+            <view class="tr">案件罪犯：{{item.criminal}}</view>
+            <view class="tr">案件类型：<text class="type">{{item.type}}</text></view>
+            <view class="tr">案件部门：{{item.area}}</view>
+            <view class="tr">发布时间：{{item.time}}</view>
+          </view>
+          <navigator class="all-info" url="../moreinfo1/morinfo1?type={{item.type}}&area={{item.area}}&time={{item.time}}&num={{item.num}}&content={{item.content}}&imgUrl={{item.imgUrl}}&voiceUrl={{item.voiceUrl}}&videoUrl={{item.videoUrl}}&name={{item.name}}&criminal={{item.criminal}}">查看详情</navigator>
+        </view>
+
+        <view class="table" wx:elif="{{Type==item.type && Area=='all'}}">
+          <view class="main-info">
+            <view class="tr">案件编号：{{item.num}}</view>
+            <view class="tr">案件名称：{{item.name}}</view>
+            <view class="tr">案件罪犯：{{item.criminal}}</view>
+            <view class="tr">案件类型：<text class="type">{{item.type}}</text></view>
+            <view class="tr">案件部门：{{item.area}}</view>
+            <view class="tr">发布时间：{{item.time}}</view>
+          </view>
+          <navigator class="all-info" url="../moreinfo1/morinfo1?type={{item.type}}&area={{item.area}}&time={{item.time}}&num={{item.num}}&content={{item.content}}&imgUrl={{item.imgUrl}}&voiceUrl={{item.voiceUrl}}&videoUrl={{item.videoUrl}}&name={{item.name}}&criminal={{item.criminal}}">查看详情</navigator>
+        </view>
+
+        <view class="table" wx:elif="{{Type=='all' && Area==item.area}}">
+          <view class="main-info">
+            <view class="tr">案件编号：{{item.num}}</view>
+            <view class="tr">案件名称：{{item.name}}</view>
+            <view class="tr">案件罪犯：{{item.criminal}}</view>
+            <view class="tr">案件类型：<text class="type">{{item.type}}</text></view>
+            <view class="tr">案件部门：{{item.area}}</view>
+            <view class="tr">发布时间：{{item.time}}</view>
+          </view>
+          <navigator class="all-info" url="../moreinfo1/morinfo1?type={{item.type}}&area={{item.area}}&time={{item.time}}&num={{item.num}}&content={{item.content}}&imgUrl={{item.imgUrl}}&voiceUrl={{item.voiceUrl}}&videoUrl={{item.videoUrl}}&name={{item.name}}&criminal={{item.criminal}}">查看详情</navigator>
+        </view>
+      </view>
+      </block>                     
+    </view>
+  </view>
+</view>

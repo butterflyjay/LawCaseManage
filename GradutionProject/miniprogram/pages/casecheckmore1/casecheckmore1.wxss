@@ -1,0 +1,50 @@
+/* pages/casecheckmore/casecheckmore.wxss */
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  margin: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-top: solid 0.5px rgb(233, 230, 230);
+  border-left: solid 1.5px rgb(233, 230, 230);
+  border-right: solid 2.5px rgb(233, 230, 230);
+  border-bottom: solid 3.5px rgb(233, 230, 230);
+  border-radius: 10px;
+}
+.top {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: lightseagreen;
+  text-align: center;
+}
+.title {
+  padding-left: 15px;
+  width: 96%;
+  border-top: solid 0.2px  rgb(233, 230, 230);
+  border-bottom: solid 2px  rgb(233, 230, 230);
+  line-height: 45px;
+  height: 45px;
+  font-size: 18px;
+}
+.people {
+  padding-left: 15px;
+  width: 96%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.content {
+  text-indent: 2em;
+  margin-left: 15px;
+  border: solid 0.5px gray;
+  border-radius: 10px;
+  height: 150px;
+  width: 90%;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+    "backgroundColor": "#7FFFD4",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#23EBB9",
+    "navigationBarTitleText": "功能主页",
+    "navigationBarTextStyle": "black"
+}

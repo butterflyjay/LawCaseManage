@@ -1,0 +1,54 @@
+<!--pages/changeuser/changeuser.wxml-->
+<form class="infor" bindsubmit="formSubmit">
+	      <view class="center">
+	        <view class="center_top">
+			      <view class="center_img" bindtap="addhead">
+              <image src="{{user.iconUrl}}" class="user_head"></image>
+            </view>
+            <span style="font-size: 12px;color:gray">添加头像</span>
+          </view>
+        </view>
+        <view class="center_main">
+            <view class="addinfor">
+              <label><text style="color: red;">工号</text>：</label>
+              <view class="add" type="number" name="user_id"><text style="color:red;">{{user.user_id}}</text></view>
+            </view>
+            <view class="addinfor">
+              <label>名字：</label>
+              <input class="add" type="text" name="user_name" value="{{user.user_name}}"/>
+            </view>
+            <view class="addinfor">
+              <label><text style="color: red;">账号</text>：</label>
+              <view class="add" type="text" name="username"><text style="color:red;">{{user.username}}</text></view>
+            </view>
+            <view class="addinfor">
+              <label>密码：</label>
+              <input class="add" type="text" name="password" value="{{user.password}}"/>
+            </view>
+            <view class="addinfor">
+              <label><text style="color: red;">性别</text>：</label>
+              <view class="add" type="text" name="sex"><text style="color:red;">{{user.sex}}</text></view>
+            </view>
+            <view class="addinfor">
+              <label>职务：</label>
+              <picker class="add" bindchange="PickerChangejob" value="{{index_job}}" range="{{jobtype}}">
+                <input type="hidden" disabled="true" name="job" value="{{jobtype[index_job]}}" />
+              </picker>
+            </view>
+            <view class="addinfor">
+              <label>年龄：</label>
+              <input class="add" type="text" name="age" value="{{user.age}}"/>
+            </view>
+          </view>
+        <view class="click">
+          <button class="btn" type="primary" formType="submit">修改并提交</button>
+        </view>
+        <view class="tell">
+          <view>
+            <view>修改原则：</view>
+            <view><text style="color:red;">工号</text>：不能修改</view>
+            <view><text style="color:red;">账号</text>：不能修改</view>
+            <view><text style="color:red;">性别</text>：不能修改</view>
+          </view>        
+        </view>
+      </form>

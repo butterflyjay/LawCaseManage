@@ -1,0 +1,39 @@
+<view class="top">
+	<view class="center">
+	  <view class="center_top">
+			<view class="center_img">
+				<image src="{{user.iconUrl}}" type="userAvatarUrl" class="user_head"></image>
+			</view>
+			<view class="center_info">
+				<view class="center_phone">基本信息</view>
+				<view class="center_username">姓名: {{user.user_name}}</view>
+						<!-- <view class="center_phone">phone:{{phone}}</view> -->
+				
+      </view>  
+    </view>
+	</view>
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+<view class="main">
+		<label class="main_info">工号:</label>
+		<text>{{user.user_id}}</text>
+</view>
+<view class="main">
+	<label class="main_info">账号:</label>
+	<text>{{user.username}}</text>
+</view>
+<view class="main">
+	<label class="main_info">性别:</label>
+	<text>{{user.sex}}</text>
+</view>
+<view class="main">
+	<label class="main_info">职务:</label>
+	<text>{{user.job}}</text>
+</view>
+<view class="main">
+		<label class="main_info">年龄:</label>
+		<text>{{user.age}}</text>
+</view>
+<view class="quit" bindtap="quit">
+	<button>退出登录</button>
+</view>

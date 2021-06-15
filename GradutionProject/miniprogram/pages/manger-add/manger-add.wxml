@@ -1,0 +1,105 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="container">
+    <view class="case-name">
+      <label class="case-lab">案件编号<text style="color: red">*</text></label>
+      <input class="name" name="num" auto-focus placeholder="请输入案件编号" />
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件名称<text style="color: red">*</text></label>
+      <input class="name" name="name" placeholder="请输入案件名称" />
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件罪犯<text style="color: red">*</text></label>
+      <input class="name" name="criminal" placeholder="请输入案件嫌犯" />
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件类型<text style="color: red">*</text></label>
+      <picker class="name" bindchange="PickerChangetype" value="{{index_type}}" range="{{casetype}}">
+        <input id="choosetype" type="hidden" disabled="true" name="type" value="{{casetype[index_type]}}" />
+      </picker>
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件部门<text style="color: red">*</text></label>
+      <picker class="name" bindchange="PickerChangearea" value="{{index_area}}" range="{{casearea}}">
+        <input id="choosearea" type="hidden" disabled="true" name="area" value="{{casearea[index_area]}}" />
+      </picker>
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件时间<text style="color: red">*</text></label>
+      <input class="name" name="time" placeholder="请输入案件时间" />
+    </view>
+    <view class="case-name">
+      <label class="case-lab">案件详细描述<text style="color: red">*</text></label>
+      <textarea class="describ" name="content" maxlength="-1" type="submit" placeholder="请输入案件主要内容" />
+      </view>
+    <view class="pic">
+        <view class="case-lab">案件图片</view>
+        <view>
+            <view class='view_flex'>
+                <view class='flex_5 flex_image'>
+                    <image src='{{img_Url.length == 0 ? image_add : img_Url[0]}}' mode='widthFix'  bindtap='bindAddPhotoTap' class='image_add' data-index='0'/>
+                    <image src='{{img_Url.length == 1 ? image_add : img_Url[1]}}' mode='widthFix'  bindtap='bindAddPhotoTap' class='image_add' data-index='1'/>
+                    <image src='{{img_Url.length == 2 ? image_add : img_Url[2]}}' mode='widthFix'  bindtap='bindAddPhotoTap' class='image_add' data-index='2'/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="voi">
+        <label class="case-lab">案件录音</label>
+        <button class="voice" type="primary" bindtap="audiobutton">选择音频</button>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="audioActionSheet" >
+	        <action-sheet-item>
+            <audio  src="{{voi_Url}}" name="案件录音" author="--" id="myAudio" controls="true"></audio>
+            <button type="primary" bindtap="audioStart">重新播放</button>
+            <button class="upaudio" bindtap="selectaudio">上传</button>
+          </action-sheet-item>
+          <action-sheet-cancel>确认</action-sheet-cancel>
+        </action-sheet>
+    </view>  
+    
+    
+        <view class="vid">
+        <label class="case-lab">案件视频</label> 
+        <button class="voice" type="primary" bindtap="videobutton">选择视频</button>
+        <action-sheet hidden="{{actionsheethidden}}" bindchange="videoActionSheet" >
+	        <action-sheet-item >
+            <view class="videostyle">
+            <view class="playerInfo">
+              <view class="video" wx:if="{{clickFlag}}">
+                <image class="videoContent" wx:if="{{poster}}" src="{{poster}}" mode="aspectFill" bindtap="chooseVideo"/>
+            <view class="videoContent"  wx:else bindtap="chooseVideo" >
+                <image class="playImg" src="../images/uploadVideo.png" mode="aspectFill"/>
+            </view>
+        </view>
+        <view class="video" wx:else>
+            <image class="videoContent" wx:if="{{poster}}" src="{{poster}}" mode="aspectFill"/>
+            <view class="videoContent"  wx:else>
+        <view class="videoUrlResult" wx:if="{{videoUrl}}" >
+        <!--autoplay="true" 视频自动播放-->
+        <video custom-cache="{{false}}" class="videoContent" style="width: 90%;margin-left: 5%;margin-top: 20rpx;" 
+               show-center-play-btn="true" src="{{videoUrl}}" object-fit="fill" controls="true" 
+               enable-progress-gesture="true"
+               bindfullscreenchange="fullscreenchange">
+          </video>
+      </view>
+            </view>
+        </view>
+    </view>
+    <view class="footerbtn">
+        <button type="default" style="width:40%;" bindtap = "chooseVideo" wx:if="{{clickFlag}}">上传视频</button>
+        <button type="default" style="width:40%;color:#cccccc;" wx:else>上传视频</button>
+        <button style="width:40%;background-color:red;color:white;" bindtap = "deleteVideo">删除</button>
+    </view>
+          </view>
+          </action-sheet-item>
+          <action-sheet-cancel>确认</action-sheet-cancel>
+        </action-sheet>
+    </view>
+    </view>
+    <view class="main">
+    <view class="btn-area">
+        <button id="btnsum" style="margin: 30rpx 0;" type="primary" formType="submit">提交</button>
+        <button id="btnres" style="margin: 30rpx 0; background: Gainsboro;" formType="reset">重置</button>
+      </view>
+    </view>
+</form>

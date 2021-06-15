@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+      "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+      "van-dropdown-item": "@vant/weapp/dropdown-item/index"
+  },
+    "backgroundColor": "#7FFFD4",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "案件管理",
+    "navigationBarTextStyle": "black"
+}

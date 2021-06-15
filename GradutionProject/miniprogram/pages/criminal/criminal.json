@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+  },
+  "backgroundColor": "#23EBB9",
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#23EBB9",
+  "navigationBarTitleText": "罪犯信息",
+  "navigationBarTextStyle": "black"
+}

@@ -1,0 +1,49 @@
+<form bindsubmit="formSubmit">
+<view class="table">
+  <view class="main-info">
+    <view class="changecase">
+      <label>案件编号<text style="color:red;">*</text>：</label>
+      <view class="change" style="color:red;">{{item.num}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件名称<text style="color:red;">*</text>：</label>
+      <view class="change" style="color:red;">{{item.name}}</view>
+    </view>
+    <view class="changecase">
+      <label>案件罪犯<text>*</text>：</label>
+      <input class="change" type="text" name="criminal" value="{{item.criminal}}"/>
+    </view>
+    <view class="changecase">
+      <label>案件类型<text>*</text>：</label>
+      <picker class="change" bindchange="PickerChangetype" value="{{index_type}}" range="{{casetype}}">
+        <input id="choosetype" type="hidden" disabled="true" name="type" value="{{casetype[index_type]}}" />
+      </picker>
+    </view>
+    <view class="changecase">
+      <label>案件部门<text>*</text>：</label>
+      <picker class="change" bindchange="PickerChangearea" value="{{index_area}}" range="{{casearea}}">
+        <input id="choosearea" type="hidden" disabled="true" name="area" value="{{casearea[index_area]}}" />
+      </picker>
+    </view>
+    <view class="changecase">
+      <label>案件时间<text>*</text>：</label>
+      <input class="change" name="time" value="{{item.time}}" />
+    </view>
+    <view class="tr">详细描述：</view>
+    <textarea class="describe" name="content" value="{{item.content}}"  style="position: relative; left: 24rpx; top: 1rpx"></textarea>
+    <view class="tr">案件相关图片：</view>
+    <button class="showimg" wx:if="{{item.imgUrl}}" bindtap="lookpic">查看图片</button>
+    <view class="notshow" wx:else>--该案件没有相关图片--</view>
+    <view class="tr">案件相关录音：</view>
+      <audio id="myAudio" class="showvoice" author="--" name="案件录音" wx:if="{{item.voiceUrl}}" src="{{item.voiceUrl}}" controls="true"></audio>
+      <view class="notshow" wx:else>--该案件没有录音--</view>
+    <view class="tr">案件相关视频：</view>
+    <video class="showvideo" wx:if="{{item.videoUrl}}" src="{{item.videoUrl}}"></video>
+    <view class="notshow" wx:else>--该案件无相关视频--</view>
+  </view>
+  <view class="allbtn">
+    <button class="btn" type="primary" formType="submit">修改</button>
+    <button style="background-color:red;color:white;" class="btn" bindtap="delcase">删除</button>
+  </view>
+</view>
+</form>

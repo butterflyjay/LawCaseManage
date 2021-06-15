@@ -1,0 +1,56 @@
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待审核</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">未通过</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已通过</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <view class="container">
+        <block wx:for="{{casecheck}}" wx:key="index" wx:if="{{item.status===0 || item.status===3}}">
+          <view class="main" bindtap="checktap" data-value="{{item}}">
+            <view class="top">
+              <view class="status" wx:if="{{item.status===0}}" style="background-color: #ffd770">修改申请审核中</view>
+              <view class="status" wx:if="{{item.status===3}}" style="background-color: #ffd770">删除申请审核中</view>
+              <view class="time">提交时间：{{item.nowtime}}</view>
+            </view>
+            <view class="title">{{item.name}}</view>
+            <view class="people">案件编号：{{item.num}}</view>
+            <view class="people">提交人：{{item.user_name}}</view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="container">
+        <block wx:for="{{casecheck}}" wx:key="index" wx:if="{{item.status===1 || item.status===4}}">
+          <view class="main">
+            <view class="top">
+              <view class="status" wx:if="{{item.status==1}}" style="background-color: red">修改申请已拒绝</view>
+              <view class="status" wx:if="{{item.status==4}}" style="background-color: red">删除申请已拒绝</view>
+              <view class="time">提交时间：{{item.nowtime}}</view>
+            </view>
+            <view class="title">{{item.name}}</view>
+            <view class="people">案件编号：{{item.num}}</view>
+            <view class="people">提交人：{{item.user_name}}</view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="container">
+        <block wx:for="{{casecheck}}" wx:key="index" wx:if="{{item.status===2 || item.status===5}}">
+          <view class="main">
+            <view class="top">
+              <view class="status"  wx:if="{{item.status==2}}" style="background-color: green">修改申请已通过</view>
+              <view class="status"  wx:if="{{item.status==5}}" style="background-color: green">删除申请已通过</view>
+              <view class="time">提交时间：{{item.nowtime}}</view>
+            </view>
+            <view class="title">{{item.name}}</view>
+            <view class="people">案件编号：{{item.num}}</view>
+            <view class="people">提交人：{{item.user_name}}</view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+</swiper>

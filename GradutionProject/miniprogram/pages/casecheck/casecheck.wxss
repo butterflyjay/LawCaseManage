@@ -1,0 +1,72 @@
+/* pages/casecheck/casecheck.wxss */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  margin: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-top: solid 0.5px rgb(233, 230, 230);
+  border-left: solid 1.5px rgb(233, 230, 230);
+  border-right: solid 2.5px rgb(233, 230, 230);
+  border-bottom: solid 3.5px rgb(233, 230, 230);
+  border-radius: 10px;
+}
+.top {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.time {
+  margin-left: auto;
+}
+.title {
+  padding-left: 15px;
+  width: 96%;
+  border-top: solid 0.2px  rgb(233, 230, 230);
+  border-bottom: solid 2px  rgb(233, 230, 230);
+  line-height: 45px;
+  height: 45px;
+  font-size: 18px;
+  color: dodgerblue;
+}
+.status {
+  color: white;
+  font-size: 15px;
+  width: fit-content;
+  text-align: center;
+  height: fit-content;
+  border-radius: 5px;
+}
+.time {
+  color: darkgrey;
+  font-size: 11px;
+}
+.people {
+  padding-left: 15px;
+  font-size: 13px;
+  width: 96%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* 这是一个分界线 */
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;}
+.swiper-tab-list{  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #777777;
+}
+.on{ color: blue;
+  border-bottom: 3rpx solid blue;}
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }

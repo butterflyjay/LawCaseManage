@@ -1,0 +1,106 @@
+<!--pages/person/person.wxml-->
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">添加用户</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">删除用户</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">修改信息</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <form class="infor" bindsubmit="formSubmit" bindreset="formReset">
+	      <view class="center">
+	        <view class="center_top">
+			      <view class="center_img" bindtap="addhead">
+              <image src="{{user.iconUrl}}" class="user_head"></image>
+            </view>
+            <span style="font-size: 12px;color:gray">添加头像</span>
+          </view>
+        </view>
+        <view class="center_main">
+            <view class="addinfor">
+              <label>工号：</label>
+              <input class="add" type="number" name="user_id"/>
+            </view>
+            <view class="addinfor">
+              <label>名字：</label>
+              <input class="add" type="text" name="user_name"/>
+            </view>
+            <view class="addinfor">
+              <label>账号：</label>
+              <input class="add" type="text" name="username"/>
+            </view>
+            <view class="addinfor">
+              <label>密码：</label>
+              <input class="add" type="text" name="password"/>
+            </view>
+            <view class="addinfor">
+              <label>性别：</label>
+              <picker class="add" bindchange="PickerChangesex" value="{{index_sex}}" range="{{sex}}">
+                <input type="hidden" disabled="true" name="sex" value="{{sex[index_sex]}}" />
+            </picker>
+            </view>
+            <view class="addinfor">
+              <label>职务：</label>
+              <picker class="add" bindchange="PickerChangejob" value="{{index_job}}" range="{{jobtype}}">
+                <input type="hidden" disabled="true" name="job" value="{{jobtype[index_job]}}" />
+              </picker>
+            </view>
+            <view class="addinfor">
+              <label>年龄：</label>
+              <input class="add" type="text" name="age"/>
+            </view>
+          </view>
+        <view class="click">
+          <button class="btn" type="primary" formType="submit">添加</button>
+          <button class="btn" style="background-color:gray; color:white;" formType="reset">重置</button>
+        </view>
+        <view class="tell">
+          <view>
+            <view>创建格式：</view>
+            <view><text style="color:red;">工号</text>：必须为长度等于四的数字</view>
+            <view><text style="color:red;">账号</text>：必须为长度在8-10的字符串</view>
+            <view><text style="color:red;">密码</text>：必须为长度在10-16的字符串</view>
+          </view>        
+        </view>
+      </form>
+    </swiper-item>
+    <swiper-item>
+      <view>
+        <block wx:for="{{list}}" wx:key='index'>
+          <view class='list1'>
+            <view class="center_img">
+              <image class="user_head" src="{{item.iconUrl}}"></image>
+            </view>
+            <view class="del_infor">
+              <view class='del'>工号：{{item.user_id}}</view>
+              <view class='del'>账号：{{item.username}}</view>
+              <view class="del">名字：{{item.user_name}}</view>
+              <view class="del">职务：{{item.job}}</view>
+              <view class="del">性别：{{item.sex}}</view>
+            </view>
+            <button class='right1' bindtap='del' data-index="{{index}}" data-value="{{item}}">删除</button>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+    
+    <swiper-item>
+      <view>
+        <block wx:for="{{list}}" wx:key='index'>
+          <view class='list2'>
+            <view class="center_img">
+              <image class="user_head" src="{{item.iconUrl}}"></image>
+            </view>
+            <view class="del_infor">
+              <view class='del'>工号：{{item.user_id}}</view>
+              <view class='del'>账号：{{item.username}}</view>
+              <view class="del">名字：{{item.user_name}}</view>
+              <view class="del">职务：{{item.job}}</view>
+              <view class="del">性别：{{item.sex}}</view>
+            </view>
+            <button class='right2' bindtap='change' data-value="{{item}}">修改</button>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+</swiper>

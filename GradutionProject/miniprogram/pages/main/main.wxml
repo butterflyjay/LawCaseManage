@@ -1,0 +1,68 @@
+<!--pages/main/main.wxml-->
+<view class="top">
+  <image src='http://docfile.funkingka.cn/FqzmiFqvXbHg-cfbquNRlawHUgHt' mode='scaleToFill' class='gif-wave'></image>
+</view>
+<swiper indicator-dots="true" autoplay="true" duration="500" interval="3500">
+  <block wx:for="{{showimg}}" wx:key="index">
+    <swiper-item>
+      <image style="height:100%;width:100%" src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="container">
+  <view class="casetext">案件管理</view>
+  <view class="center-top">
+    <navigator class="function" url="/pages/manger-add/manger-add" hover-class="navigator-hover">
+      <image class="img" src='../images/addcase.png'></image>
+      <label style="font-size:13px; color:gray;">添加案件</label>
+    </navigator>
+    <view>
+      <navigator wx:if="{{user.job === '处警'}}" class="function" url="/pages/manger-browse/manger-browse">
+      <image class="img" src="../images/look.png"></image>
+      <label style="font-size:13px; color:gray;">案件查看管理</label>
+    </navigator>
+    <navigator wx:elif="{{user.job === '审核员' || '高级案警'}}" class="function" url="/pages/manger-browse1/manger-browse1">
+      <image class="img" src="../images/look.png"></image>
+      <label style="font-size:13px; color:gray;">案件查看管理</label>
+    </navigator>
+    </view>
+    <view>
+      <navigator wx:if="{{user.job === '处警'}}" class="function" url="/pages/casecheck1/casecheck1">
+      <image class="img" src="../images/check.png"></image>
+      <label style="font-size:13px; color:gray;">我的审核提交</label>
+    </navigator>
+    <navigator wx:elif="{{user.job === '审核员' || '高级案警'}}" class="function" url="/pages/casecheck/casecheck">
+      <image class="img" src="../images/check.png"></image>
+      <label style="font-size:13px; color:gray;">案件审核</label>
+    </navigator>
+    </view>
+    
+  </view>
+  <view class="casetext">其他管理</view>
+  <view class="center-bottom" wx:if="{{user.job==='高级案警'}}">
+    <navigator class="function" url="/pages/visual/visual">
+      <image class="img" src="../images/watch.png"></image>
+      <label style="font-size:13px; color:gray;">案件信息图</label>
+    </navigator>
+    <navigator class="function" url="/pages/person/person">
+      <image class="img" src="../images/permanager.png"></image>
+      <label style="font-size:13px; color:gray;">人员管理</label>
+    </navigator>
+    <navigator class="function" url="/pages/record/record">
+      <image class="img" src="../images/operate.png"></image>
+      <label style="font-size:13px; color:gray;">罪犯管理</label>
+    </navigator>
+  </view>
+  <view class="center-bottom" wx:elif="{{user.job==='处警'||'审核员'}}">
+    <navigator class="function1" url="/pages/visual/visual">
+      <image class="img" src="../images/watch.png"></image>
+      <label style="font-size:13px; color:gray;">案件展示图</label>
+    </navigator>
+    <navigator class="function1" url="/pages/record/record">
+      <image class="img" src="../images/operate.png"></image>
+      <label style="font-size:13px; color:gray;">罪犯管理</label>
+    </navigator>
+  </view>
+</view>
+
+
